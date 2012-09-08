@@ -1,4 +1,8 @@
 Biddingly::Application.routes.draw do
+
+  root :to => 'auction_items#index'
+  resources :auction_items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

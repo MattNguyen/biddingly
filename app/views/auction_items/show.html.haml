@@ -1,0 +1,7 @@
+%h1= @auction_item.name
+
+%h3= Time.now < @auction_item.ended_at ? time_ago_in_words(@auction_item.ended_at) : "Auction ended!"
+%p Description: #{ @auction_item.description }
+%p Start: #{ @auction_item.started_at }
+%p End: #{ @auction_item.ended_at }
+%p Current price: #{ @auction_item.starting_price }

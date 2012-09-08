@@ -1,0 +1,11 @@
+%h1 New Auction
+
+= simple_form_for( @auction_item, :class => "form-horizontal" ) do |f|
+  = render 'shared/error_messages', :form_object => @auction_item
+
+  = f.input  :name, :required => true
+  = f.input  :starting_price, :input_html => { :value => 0 }
+  = f.input  :started_at,          :label => "Start Date", :as => :date
+  = f.input  :total_num_days,      :label => "How many days will your auction last?", :collection => 1..7, :include_blank => false
+  = f.input  :description
+  = f.button :submit, :class => "btn"
